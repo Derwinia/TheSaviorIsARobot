@@ -1,0 +1,21 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+#intro{
+  margin: 1em;
+  padding: 5px;
+  background-color: antiquewhite;
+  width: 90%;
+  h1{
+    text-align: center;
+  }
+}
+
+#map {
+  width:90%;
+  height:500px;
+}

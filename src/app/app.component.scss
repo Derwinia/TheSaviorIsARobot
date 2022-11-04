@@ -1,0 +1,19 @@
+#Nav{
+  height: 100px;
+  width: 100%;
+  background-color: rgb(27, 27, 27);
+  display: flex;
+  justify-content: center;
+}
+
+#NavButton{
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  button {
+    margin: 0 10px;
+    min-width: 150px;
+  }
+}
+
