@@ -11,6 +11,9 @@ import { GameComponent } from './pages/game/game.component';
 import { ApiComponent } from './pages/api/api.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ChartModule } from 'primeng/chart';
+import { GraphiqueApiComponent } from './components/graphique-api/graphique-api.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { HomeComponent } from './pages/home/home.component';
     ApiComponent,
     ContactComponent,
     HomeComponent,
+    GraphiqueApiComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
+    ChartModule,
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]

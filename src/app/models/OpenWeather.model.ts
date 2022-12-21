@@ -1,4 +1,4 @@
-export interface currentAirPollution {
+export interface AirPollution {
   coord : number[]
   list : details
 }
