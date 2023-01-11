@@ -32,9 +32,12 @@
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "src/assets/unity/TemplateData/style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/unity/Build/unity.loader.js"
+            ]
           },
           "configurations": {
             "production": {
