@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ConsoApiOpenWeatherService {
 
-  public listData : AirPollution[] = []
+  public listData? : AirPollution
   public content = new BehaviorSubject<any>(this.listData);
   public share = this.content.asObservable();
 
@@ -21,11 +21,11 @@ export class ConsoApiOpenWeatherService {
   getCoordonne(lon:number, lat:number){
     this.client.get<AirPollution>(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=`+environment.tokenOpenWeather)
       .pipe(tap(data => {
-        this.listData.push(data)
+        this.listData = data
+        this.content.next(this.listData)
+        console.log(this.listData)
+        console.log("Bernardo")
       }))
       .subscribe();
-      this.content.next(this.listData)
-      console.log(this.listData)
   }
-
 }

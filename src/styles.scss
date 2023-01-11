@@ -1,4 +1,17 @@
+@font-face {
+  font-family: "SpaceRanger";
+    src: local("SpaceRanger"), url(./assets/fonts/SpaceRanger.ttf) format("truetype");
+}
+@font-face {
+  font-family: "good timing bd";
+    src: local("good timing bd"), url(./assets/fonts/goodtimingbd.ttf) format("truetype");
+}
+
 /* You can add global styles to this file, and also import other style files */
 body{
+  font-family: "SpaceRanger";
   margin: 0;
+}
+p{
+  font-family: 'good timing bd';
 }
