@@ -1,12 +1,12 @@
 export interface AirPollution {
   coord : number[]
-  list : details
+  list : details[]
 }
 
 export interface details{
+  components : components
   dt: number
   main : mainDetail
-  components : components
 }
 
 export interface mainDetail{
@@ -15,13 +15,19 @@ export interface mainDetail{
 
 export interface components{
   co: number
+  nh3 : number
   no : number
   no2 : number
   o3 : number
-  so2 : number
   pm2_5 : number
   pm10 : number
-  nh3 : number
+  so2 : number
+}
+
+export interface FormatForChart{
+  label: string,
+  backgroundColor: string,
+  data: number[]
 }
 
 // {

@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ConsoApiOpenWeatherService {
 
-  public listData : AirPollution[] = []
+  public listData? : AirPollution
   public content = new BehaviorSubject<any>(this.listData);
   public share = this.content.asObservable();
 
@@ -20,11 +20,11 @@ export class ConsoApiOpenWeatherService {
   getCoordonne(lon:number, lat:number){
     this.client.get<AirPollution>(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=06a8666818c9a1c38413f8fe35159295`) //http://api.openweathermap.org/data/2.5/air_pollution/history?lat=${lat}&lon=${lon}&start=1606488670&end=1606747870&appid=06a8666818c9a1c38413f8fe35159295
       .pipe(tap(data => {
-        this.listData.push(data)
+        this.listData = data
+        this.content.next(this.listData)
+        console.log(this.listData)
+        console.log("Bernardo")
       }))
       .subscribe();
-      this.content.next(this.listData)
-      console.log(this.listData)
   }
-
 }
