@@ -14,6 +14,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ChartModule } from 'primeng/chart';
 import { GraphiqueApiComponent } from './components/graphique-api/graphique-api.component';
 import { MapComponent } from './components/map/map.component';
+import { WorldStateApiComponent } from './components/world-state-api/world-state-api.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MapComponent } from './components/map/map.component';
     HomeComponent,
     GraphiqueApiComponent,
     MapComponent,
+    WorldStateApiComponent,
   ],
   imports: [
     BrowserModule,

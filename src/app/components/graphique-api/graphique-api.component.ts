@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { concat } from 'rxjs';
-import { AirPollution, FormatForChart } from 'src/app/models/OpenWeather.model';
+import { AirPollution, AirPollutionFormatForChart } from 'src/app/models/OpenWeather.model';
 import { UIChart } from 'primeng/chart';
 import { ConsoApiOpenWeatherService } from 'src/app/services/consoApiOpenWeather.service';
 
@@ -14,18 +13,16 @@ export class GraphiqueApiComponent implements OnInit {
 
   @ViewChild("chart") chart? : UIChart
 
-  basicData: any;
+  horizontalData: any;
   horizontalOptions: any;
-  newEntry?: FormatForChart;
+  newEntry?: AirPollutionFormatForChart;
 
   constructor(private service: ConsoApiOpenWeatherService) { }
 
   ngOnInit(): void {
-    console.log(this.chart);
+    this.service.share.subscribe(x => this.fillBasicData(x))
 
-    this.service.content.subscribe(x => this.fillBasicData(x))
-
-    this.basicData = {
+    this.horizontalData = {
       labels: ['co','no','no2','o3','so2','pm2_5','pm10','nh3'],
       datasets: []
     };
@@ -69,11 +66,11 @@ export class GraphiqueApiComponent implements OnInit {
       Object.entries(detail.components).forEach(([key, value])=> dataArray.push(value))
     });
     this.newEntry = {
-      label : `entry_#${this.basicData.datasets.length+1}`,
+      label : `entry_#${this.horizontalData.datasets.length+1}`,
       backgroundColor : this.randomColor(),
       data : dataArray
     }
-    this.basicData.datasets.push(this.newEntry);
+    this.horizontalData.datasets.push(this.newEntry);
     this.chart?.refresh();
   }
 

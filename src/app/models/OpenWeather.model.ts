@@ -24,7 +24,7 @@ export interface components{
   so2 : number
 }
 
-export interface FormatForChart{
+export interface AirPollutionFormatForChart{
   label: string,
   backgroundColor: string,
   data: number[]
