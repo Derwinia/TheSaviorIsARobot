@@ -7,11 +7,39 @@
     src: local("good timing bd"), url(./assets/fonts/goodtimingbd.ttf) format("truetype");
 }
 
-/* You can add global styles to this file, and also import other style files */
-body{
-  font-family: "SpaceRanger";
-  margin: 0;
-}
-p{
+*{
   font-family: 'good timing bd';
+}
+
+body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-image: url("/assets/images/woodBG.jpg");
+}
+
+h1{
+  font-family: "SpaceRanger";
+}
+
+.content{
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  background-color:rgb(249, 222, 192);
+  border-radius: 50px;
+}
+
+a:link {
+  color: #a16426;
+}
+a:visited {
+  color: #6c431a;
+}
+a:hover {
+  color: #d79049;
+}
+a:active {
+  color: #c88440;
 }

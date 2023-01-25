@@ -18,8 +18,10 @@ export class WorldStateApiComponent implements OnInit {
   constructor(private service: ConsoWorldAPI) {}
 
   ngOnInit() {
+
     this.service.share.subscribe(x => this.fillBasicData(x))
-    this.service.getOne(2)
+
+    this.service.getOne(1)
   }
 
   private fillBasicData(dataApi : WorldAPI){
